@@ -46,10 +46,10 @@ cd pixel-art-editor
 mkdir build && cd build
 cmake ..
 make -j
-./pixel_editor
+./TinyCanvas
 
 # Custom canvas size
-./pixel_editor 64 64
+./TinyCanvas 64 64
 ```
 
 ## Controls
@@ -105,8 +105,8 @@ make -j
 
 Launch with specific dimensions:
 ```bash
-./pixel_editor 128 64    # 128x64 canvas
-./pixel_editor 16 16     # Tiny 16x16 icon
+./TinyCanvas 128 64    # 128x64 canvas
+./TinyCanvas 16 16     # Tiny 16x16 icon
 ```
 
 ### File Format
@@ -149,7 +149,7 @@ make
 ```bash
 cmake -DCMAKE_BUILD_TYPE=Release ..
 make
-./pixel_editor
+./TinyCanvas
 ```
 
 ### Clean Build

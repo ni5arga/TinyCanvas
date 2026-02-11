@@ -25,7 +25,7 @@ jobs:
       run: cmake --build build --config Release -j$(nproc)
     
     - name: Check executable
-      run: test -f build/pixel_editor
+      run: test -f build/TinyCanvas
 
   build-macos:
     runs-on: macos-latest
@@ -43,7 +43,7 @@ jobs:
       run: cmake --build build --config Release -j$(sysctl -n hw.ncpu)
     
     - name: Check executable
-      run: test -f build/pixel_editor
+      run: test -f build/TinyCanvas
 
   build-windows:
     runs-on: windows-latest
@@ -63,5 +63,5 @@ jobs:
       run: cmake --build build --config Release
     
     - name: Check executable
-      run: Test-Path build/Release/pixel_editor.exe
+      run: Test-Path build/Release/TinyCanvas.exe
       shell: powershell

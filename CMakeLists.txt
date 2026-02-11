@@ -13,17 +13,17 @@ else()
     find_package(SDL2 REQUIRED)
 endif()
 
-add_executable(pixel_editor
+add_executable(TinyCanvas
     src/main.cpp
     src/canvas.cpp
     src/editor.cpp
 )
 
-target_include_directories(pixel_editor PRIVATE src ${SDL2_INCLUDE_DIRS})
-target_link_directories(pixel_editor PRIVATE ${SDL2_LIBRARY_DIRS})
-target_link_libraries(pixel_editor ${SDL2_LIBRARIES})
+target_include_directories(TinyCanvas PRIVATE src ${SDL2_INCLUDE_DIRS})
+target_link_directories(TinyCanvas PRIVATE ${SDL2_LIBRARY_DIRS})
+target_link_libraries(TinyCanvas ${SDL2_LIBRARIES})
 
 # macOS specific
 if(APPLE)
-    target_link_libraries(pixel_editor "-framework Cocoa")
+    target_link_libraries(TinyCanvas "-framework Cocoa")
 endif()

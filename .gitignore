@@ -11,7 +11,7 @@ Makefile
 !CMakeLists.txt
 
 # Compiled binaries
-pixel_editor
+TinyCanvas
 *.out
 *.exe
 *.app
