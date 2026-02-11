@@ -45,7 +45,7 @@ vcpkg install sdl2:x64-windows
 cd pixel-art-editor
 mkdir build && cd build
 cmake ..
-make -j$(nproc)
+make -j
 ./pixel_editor
 
 # Custom canvas size
