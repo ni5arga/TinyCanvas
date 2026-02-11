@@ -1,0 +1,55 @@
+# Build directories
+build/
+cmake-build-*/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+# Compiled binaries
+pixel_editor
+*.out
+*.exe
+*.app
+
+# Object files
+*.o
+*.obj
+*.ko
+*.elf
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+*.so
+*.so.*
+*.dylib
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Output artifacts
+*.bmp
+artwork.bmp

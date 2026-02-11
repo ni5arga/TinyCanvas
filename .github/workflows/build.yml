@@ -1,0 +1,67 @@
+name: Build
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build-ubuntu:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install SDL2
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libsdl2-dev
+    
+    - name: Configure CMake
+      run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+    
+    - name: Build
+      run: cmake --build build --config Release -j$(nproc)
+    
+    - name: Check executable
+      run: test -f build/pixel_editor
+
+  build-macos:
+    runs-on: macos-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install SDL2
+      run: brew install sdl2
+    
+    - name: Configure CMake
+      run: cmake -B build -DCMAKE_BUILD_TYPE=Release
+    
+    - name: Build
+      run: cmake --build build --config Release -j$(sysctl -n hw.ncpu)
+    
+    - name: Check executable
+      run: test -f build/pixel_editor
+
+  build-windows:
+    runs-on: windows-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install SDL2
+      run: |
+        vcpkg install sdl2:x64-windows
+        vcpkg integrate install
+    
+    - name: Configure CMake
+      run: cmake -B build -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake
+    
+    - name: Build
+      run: cmake --build build --config Release
+    
+    - name: Check executable
+      run: Test-Path build/Release/pixel_editor.exe
+      shell: powershell
