@@ -1,5 +1,7 @@
 # TinyCanvas
 
+![screenshot](/screenshots/screenshot.png)
+
 [![Build](https://github.com/ni5arga/TinyCanvas/actions/workflows/build.yml/badge.svg)](https://github.com/ni5arga/TinyCanvas/actions/workflows/build.yml)
 [![C++](https://img.shields.io/badge/C%2B%2B-17-blue.svg)](https://isocpp.org/)
 [![SDL2](https://img.shields.io/badge/SDL2-2.0.5+-brightgreen.svg)](https://www.libsdl.org/)
